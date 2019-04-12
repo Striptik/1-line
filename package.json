@@ -1,16 +1,47 @@
 {
   "name": "1-line",
-  "version": "0.0.1",
-  "description": "1-liner functions, tinies and functionals",
-  "main": "index.js",
-  "repository": "git@github.com:Striptik/1-line.git",
-  "scripts": {
-    "test": "jest",
-    "build": "tsc"
-  },
+  "version": "0.0.2",
   "author": "Kevin <kevin.public.mail@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
+  "description": "1-liner functions, tinies and functionals",
+  "keywords": [
+    "1-liner",
+    "tools",
+    "utils"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Striptik/1-line.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Striptik/1-line/issues"
+  },
+  "homepage": "https://github.com/Striptik/1-line#readme",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "watch": "jest --config jestconfig.json --watch",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "yarn format && git add . src",
+    "postversion": "git push && git push --tags"
+  },
   "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "jest": "^23.6.0",
+    "prettier": "^1.17.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.4.3"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
