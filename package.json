@@ -1,0 +1,16 @@
+{
+  "name": "1-line",
+  "version": "0.0.1",
+  "description": "1-liner functions, tinies and functionals",
+  "main": "index.js",
+  "repository": "git@github.com:Striptik/1-line.git",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "author": "Kevin <kevin.public.mail@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.4.3"
+  }
+}
