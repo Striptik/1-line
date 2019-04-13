@@ -22,6 +22,8 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "watch": "jest --config jestconfig.json --watch",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec",
+    "ci": "npm run lint && npm run build && npm run cover",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
@@ -34,8 +36,11 @@
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs"
   },
   "devDependencies": {
+    "@types/istanbul": "^0.4.30",
     "@types/jest": "^22.2.3",
+    "coveralls": "^3.0.3",
     "gh-pages": "^2.0.1",
+    "istanbul": "^0.4.5",
     "jest": "^23.6.0",
     "prettier": "^1.17.0",
     "ts-jest": "^24.0.2",

@@ -4,6 +4,8 @@ node_js:
 install:
   - yarn install
 script:
-  - yarn test
+  - yarn ci
 before_script:
   - yarn build
+after_script:
+  - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
