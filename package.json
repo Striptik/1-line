@@ -29,16 +29,20 @@
     "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
     "version": "yarn format && git add . src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "docs": "typedoc --out docs src",
+    "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs"
   },
   "devDependencies": {
     "@types/jest": "^22.2.3",
+    "gh-pages": "^2.0.1",
     "jest": "^23.6.0",
     "prettier": "^1.17.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.15.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
+    "typedoc": "^0.14.2",
     "typescript": "^3.4.3"
   },
   "files": [
